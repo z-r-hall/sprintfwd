@@ -2,37 +2,41 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Nav {
+  padding: 1rem;
+  background-color: lightblue;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.members-link:hover {
+ font-weight:600;
+ text-decoration: underline;
+}
+.todo-link:hover {
+ font-weight:600;
+ text-decoration: underline;
+}
+.teams-link:hover {
+  font-weight:600;
+  text-decoration: underline;
 }
 
-.App-link {
-  color: #61dafb;
+table {
+  border: 1px solid black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+th {
+  text-decoration: underline;
+}
+
+tr {
+  text-align: left;
+}
+
+.Members {
+  text-align: center;
 }

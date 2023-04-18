@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Nav from './Nav';
+import Teams from './Teams';
+import Members from './Members';
+import Todo from './Todo';
 
 function App() {
+  const [showTodo, setShowTodo] = useState(false);
+  const [showTeams, setShowTeams] = useState(false);
+  const [showMembers, setShowMembers] = useState(false);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Nav
+      setShowTodo={setShowTodo}
+      setShowTeams={setShowTeams}
+      setShowMembers={setShowMembers} 
+      />
+      {showTeams && <Teams />}
+      {showMembers && <Members />}
+      {showTodo && <Todo />}
     </div>
   );
 }
