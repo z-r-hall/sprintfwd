@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import todo from './mock-db/todo';
 
 function Todo() {
@@ -8,20 +8,17 @@ function Todo() {
   const [updateInput, setUpdateInput] = useState('');
   const [todoIndex, setTodoIndex] = useState();
 
-  useEffect(()=> {
-    setTodoList(todo.items);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[todo.items])
-
   function addItem(e) {
     setShowUpdateInput(false);
     todo.items = [...todo.items, todoItem];
+    setTodoList(todo.items);
     document.querySelector('input').value = '';
   }
 
   function deleteItem(index){
     setShowUpdateInput(false);
     todo.items = todo.items.filter((el, i) => i !== index);
+    setTodoList(todo.items);
   }
 
   function updateItem(index){
@@ -39,6 +36,7 @@ function Todo() {
         return el;
       }
     });
+    setTodoList(todo.items);
   }
   return (
     <div className="Todo" >
