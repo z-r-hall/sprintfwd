@@ -1,10 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import members from './mock-db/members';
 
-export class Members extends Component {
-  render() {
+export function Members ({ setShowMembers, setShowTeamDetails, setTeam }) {
+    function getDetails(e){
+      setTeam(e.target.innerText);
+      setShowTeamDetails(true);
+      setShowMembers(false);
+    }
     return (
-      <div className="Members">
+      <div className="Main">
       <table>
         <tr>
           <th>Members</th>
@@ -14,7 +18,7 @@ export class Members extends Component {
           return (
             <tr key={i}>
                 <td>{el.first_name} {el.last_name}</td>
-                <td> {el.team.name}</td>
+                <td className="link" onClick={getDetails} >{el.team.name}</td>
             </tr>
           );
         })}
@@ -22,6 +26,5 @@ export class Members extends Component {
       </div>
     );
   }
-}
 
 export default Members;
