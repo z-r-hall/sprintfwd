@@ -51,6 +51,10 @@ h3 {
   text-decoration: underline;
 }
 
+p {
+  margin: 0 5rem 0 5rem;
+}
+
 .todo-buttons {
   padding: .25rem;
   display: grid;
