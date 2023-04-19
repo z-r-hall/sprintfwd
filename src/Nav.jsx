@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Nav({ setShowMembers, setShowTeams, setShowTodo, setShowTeamDetails }) {
+function Nav({ setShowMembers, setShowTeams, setShowTodo, setShowTeamDetails, setShowWelcome }) {
   function goToPage(e){
     switch(e.target.innerText){
       case 'Members': 
@@ -8,18 +8,21 @@ function Nav({ setShowMembers, setShowTeams, setShowTodo, setShowTeamDetails }) 
         setShowTeams(false);
         setShowTodo(false);
         setShowTeamDetails(false);
+        setShowWelcome(false);
         break;
       case 'Teams':
         setShowMembers(false);
         setShowTeams(true);
         setShowTodo(false);
         setShowTeamDetails(false);
+        setShowWelcome(false);
         break;
       case 'To-do':
         setShowMembers(false);
         setShowTeams(false);
         setShowTodo(true);
         setShowTeamDetails(false);
+        setShowWelcome(false);
         break;
       default:
         break;
